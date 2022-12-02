@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91f8cc50d3c70b4c963824242f5e4b6, type: 3}
+  m_Name: Safety protocol 1
+  m_EditorClassIdentifier: 
+  username: '@Nasa'
+  likes: 6900
+  shares: 4200
+  m_lines:
+  - content: The Earth is Flat
+    value: 100
+  - content: The Earth is Round!
+    value: -150
+  - content: Global Warming isn't real!
+    value: 249
