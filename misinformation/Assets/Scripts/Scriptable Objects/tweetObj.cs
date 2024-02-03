@@ -12,4 +12,5 @@ public class tweetObj : ScriptableObject
     public int shares = 0;
 
     public int value = 0; //<== ova kazvit dali e dobar ili los isto ko vo drugono;
+    public int chaosLevel = 0;
 }
