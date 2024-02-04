@@ -62,12 +62,10 @@ public class scorescript : MonoBehaviour {
         if (x > 0)
         {
             good.Play();
-            LikesPopup.SpawnLikes();
         }
         else
         {
             bad.Play();
-            LikesPopup.SpawnDislikes();
         }
     }
 

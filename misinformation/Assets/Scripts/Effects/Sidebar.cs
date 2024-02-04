@@ -17,8 +17,7 @@ public class Sidebar : MonoBehaviour
         tweets = new Transform[6];
 
         int i = 0;
-        Transform[] sidebarTweets = gameObject.GetComponentsInChildren<Transform>();
-        foreach (Transform t in sidebarTweets)
+        foreach (Transform t in gameObject.GetComponentsInChildren<Transform>())
         {
             if (t.tag == "tweet2")
             {
@@ -33,7 +32,6 @@ public class Sidebar : MonoBehaviour
     }
     public void AddTweet(GameObject tweet)
     {
-
         tweet.tag = "tweet2";
 
         Transform twt_transform = tweet.transform;
@@ -64,12 +62,11 @@ public class Sidebar : MonoBehaviour
     void OnSceneUnloaded()
     {
         transform.parent = null;
+        DontDestroyOnLoad(gameObject);
     }
 
     void OnSceneLoaded()
     {
-        DontDestroyOnLoad(gameObject);
-
         GameObject oldSidebar = GameObject.FindGameObjectWithTag("Sidebar");
         transform.parent = oldSidebar.transform.parent;
 

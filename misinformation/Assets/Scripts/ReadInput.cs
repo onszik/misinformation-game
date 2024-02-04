@@ -5,25 +5,22 @@ using UnityEngine;
 public class ReadInput : MonoBehaviour
 {
     private string input;
-
-    private static ReadInput instance;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        instance = this;
+        
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
 
     public void ReadStringInput(string s)
     {
         input = s;
-    }
-
-    public static string text
-    {
-        get
-        {
-
-            return instance.input;
-        }
+        Debug.Log(input);
     }
 }

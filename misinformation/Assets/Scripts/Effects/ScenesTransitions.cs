@@ -9,8 +9,6 @@ public class ScenesTransitions : MonoBehaviour {
 
     public float transitionSpeed = 0.5f;
 
-    public AudioSource sound;
-
     private Image transition;
 
     private static ScenesTransitions instance;
@@ -85,14 +83,14 @@ public class ScenesTransitions : MonoBehaviour {
         transition.rectTransform.DOMoveY(startPos.y, 0f);
         transition.DOFade(1f, transitionSpeed);
 
-        sound.Play();
+        //sound.Play();
+
         yield return new WaitForSeconds(transitionSpeed);
 
         if (BeforeSceneUnload != null)
         {
             BeforeSceneUnload();
         }
-
 
         SceneManager.LoadScene(index);
     }
