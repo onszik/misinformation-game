@@ -44,7 +44,7 @@ public class final : MonoBehaviour, GameplayObject
         p.transform.position = spawnPoint.transform.position;
 
         p.transform.Find("Top/Username").GetComponent<TMP_Text>().text = "@Me";
-        p.transform.Find("Middle/Content").GetComponent<TMP_Text>().text = ReadInput.text;
+        p.transform.Find("Middle/Content").GetComponent<TMP_Text>().text = ReadInput.input;
         p.transform.Find("Bottom/Likes").GetComponent<TMP_Text>().text = "" + likes;
         p.transform.Find("Bottom/Shares").GetComponent<TMP_Text>().text = "" + shares;
          

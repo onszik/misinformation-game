@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class ReadInput : MonoBehaviour
 {
-    private string input;
-    // Start is called before the first frame update
-    void Start()
+    public static string input;
+    private ReadInput instance;
+    private void Start()
     {
-        
+        instance = this;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void ReadStringInput(string s)
     {
         input = s;
