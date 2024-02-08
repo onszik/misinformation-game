@@ -353,7 +353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &88135194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85cdbc57a30c92948a5fb5f3eeaa6326, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -1539,9 +1539,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d62e1f37ed270c048b4da217b827510d, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
@@ -4054,7 +4054,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 970630682}
   scoreValue: 0
-  text: 'Followers gained: '
+  inputtext: {fileID: 0}
+  tweettext: {fileID: 0}
+  text: "\u0421\u043B\u0435\u0434\u0430\u0447\u0438 \u0434\u043E\u0431\u0438\u0435\u043D\u043E:"
   goal: 1500
   lose: -100
   good: {fileID: 1257083188}
@@ -4080,7 +4082,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85cdbc57a30c92948a5fb5f3eeaa6326, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -5130,9 +5132,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d62e1f37ed270c048b4da217b827510d, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
@@ -6162,6 +6164,7 @@ MonoBehaviour:
   option1: {fileID: 1132069898}
   option2: {fileID: 1822755959}
   center: {fileID: 1650633225}
+  inputtext: {fileID: 0}
   gameplayObj: {fileID: 1551744194}
   blocks:
   - story: Congratulations on passing the first part! You managed to get a small
@@ -6929,8 +6932,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 133, y: -91.32999}
-  m_SizeDelta: {x: 337.6044, y: 107.0943}
+  m_AnchoredPosition: {x: 145, y: -87.828}
+  m_SizeDelta: {x: 1048.6432, y: 107.0943}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1501885150
 CanvasRenderer:
@@ -6961,11 +6964,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85cdbc57a30c92948a5fb5f3eeaa6326, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 8
+    m_MinSize: 6
     m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -6973,7 +6976,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Part 2
+  m_Text: "LEVEL 2: \u0415\u043C\u043E\u0446\u0438\u0458\u0430"
 --- !u!1 &1525605511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8276,9 +8279,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d62e1f37ed270c048b4da217b827510d, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 28
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -8409,9 +8412,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155.3, y: 25.1}
+  m_AnchoredPosition: {x: 153, y: -24.173}
   m_SizeDelta: {x: 274, y: 81.75}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.2043117}
 --- !u!222 &1874964452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8441,9 +8444,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85cdbc57a30c92948a5fb5f3eeaa6326, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 60
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 6
     m_MaxSize: 60
@@ -8453,7 +8456,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '@Me'
+  m_Text: "@\u0408\u0430\u0441"
 --- !u!1 &1955361444
 GameObject:
   m_ObjectHideFlags: 0

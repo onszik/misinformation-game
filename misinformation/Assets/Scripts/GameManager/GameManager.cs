@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public RectTransform center;
     private Vector3 startPos;
     private StoryBlock currentBlock;
-
+    public GameObject inputtext;
     public MonoBehaviour gameplayObj;
 
     public StoryBlock[] blocks;
@@ -61,7 +61,9 @@ public class GameManager : MonoBehaviour
     {
         if (currentBlock.final == true)
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            inputtext.SetActive(false);
+
 
             gameplayObj.GetComponent<GameplayObject>().StartGameplay();
         }

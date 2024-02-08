@@ -6,6 +6,8 @@ public class scorescript : MonoBehaviour {
 
     public Text scoreText;
     public int scoreValue;
+    public GameObject inputtext;
+    public GameObject tweettext;
 
     public string text;
 
@@ -55,6 +57,14 @@ public class scorescript : MonoBehaviour {
         if (scoreValue >= 20)
         {
             Destroy(GameObject.FindGameObjectWithTag("tweet1"));
+            inputtext.SetActive(true);
+
+        }
+        if (scoreValue >= 2)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("tweet1"));
+            inputtext.SetActive(true);
+            tweettext.SetActive(false);
 
         }
 
