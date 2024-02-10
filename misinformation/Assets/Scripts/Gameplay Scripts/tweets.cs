@@ -70,6 +70,7 @@ public class tweets : MonoBehaviour, GameplayObject
 
         button1.GetComponent<Button>().interactable = false;
         button2.GetComponent<Button>().interactable = false;
+        Debug.Log("hi world");
     }
 
     public void tweetty()

@@ -353,7 +353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &88135194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 88135198}
   scoreValue: 0
-  text: 'Shares gained: '
+  text: "\u0428\u0435\u0440\u043E\u0432\u0438 \u0434\u043E\u0431\u0438\u0435\u043D\u043E:"
 --- !u!114 &88135198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,9 +418,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85cdbc57a30c92948a5fb5f3eeaa6326, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 40
@@ -1862,9 +1862,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d62e1f37ed270c048b4da217b827510d, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
@@ -2131,11 +2131,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Post
-
-'
+  m_text: "\u041F\u043E\u0441\u0442\u0438\u0440\u0430\u0458"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2199,7 +2197,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &486660338
@@ -5150,9 +5148,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next
+  m_text: "\u0421\u043B\u0435\u0434\u043D\u043E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5216,7 +5214,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &949304054
@@ -5423,7 +5421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 970630682}
   scoreValue: 0
-  text: 'Followers Gained: '
+  text: "\u0421\u043B\u0435\u0434\u0430\u0447\u0438 \u0434\u043E\u0431\u0438\u0435\u043D\u043E:"
   goal: 100
   lose: -99999
   good: {fileID: 1257083188}
@@ -5449,9 +5447,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85cdbc57a30c92948a5fb5f3eeaa6326, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 40
@@ -6598,9 +6596,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d62e1f37ed270c048b4da217b827510d, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
@@ -7572,34 +7570,42 @@ MonoBehaviour:
   center: {fileID: 626849570}
   gameplayObj: {fileID: 1551744194}
   blocks:
-  - story: Congratulats on starting this adventure! We're glad to have you
-    option1Text: Thanks :D
+  - story: "\u0417\u0434\u0440\u0430\u0432\u043E. \u0414\u043E\u0431\u0440\u0435\u0434\u043E\u0458\u0434\u0435
+      \u043D\u0430 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442. \u0414\u0430\u043B\u0438
+      \u0441\u0438 \u0441\u043F\u0440\u0435\u043C\u0435\u043D \u0434\u0430 \u043F\u043E\u0447\u043D\u0435\u043C\u0435?"
+    option1Text: "\u0417\u0434\u0440\u0430\u0432\u043E, \u0437\u0430\u0434\u043E\u0432\u043E\u043B\u0441\u0442\u0432\u043E\u0442\u043E
+      \u0435 \u0432\u0437\u0430\u0435\u043C\u043D\u043E. \u0421\u043F\u0440\u0435\u043C\u0435\u043D!"
     option1Index: 2
-    option2Text: 
-    option2Index: 0
+    option2Text: "\u0425\u043C, \u0441\u0435 \u0437\u043D\u0430\u0435\u043C\u0435?"
+    option2Index: 2
     final: 0
-  - story: Today, we're gonna do a little trolling! The objective for you will be
-      to start spreading as much misinformation as you can
-    option1Text: Heck yeah!
+  - story: "\u0408\u0430\u0441 \u0441\u0443\u043C \u0440\u043E\u0431\u043E\u0442
+      \u043A\u043E\u0458 \u045C\u0435 \u0442\u0438 \u043F\u043E\u043C\u043E\u0433\u043D\u0435
+      \u0434\u0430 \u043D\u0430\u043F\u0440\u0430\u0432\u0438\u0448 \u043F\u043E\u0433\u043E\u043B\u0435\u043C\u0430
+      \u0431\u0430\u0437\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434\u0430\u0447\u0438
+      \u0441\u043E \u0446\u0435\u043B \u0434\u0430 \u0431\u0438\u0434\u0435\u0448
+      \u0432\u043B\u0438\u0458\u0430\u0442\u0435\u043B\u0435\u043D. \u041C\u043E\u0436\u0435
+      \u0434\u0430 \u043F\u043E\u0447\u043D\u0435\u043C\u0435?"
+    option1Text: "\u041F\u0430 \u043D\u0435 \u0441\u0443\u043C \u0431\u0430\u0448
+      \u0441\u0438\u0433\u0443\u0440\u0435\u043D. \u041A\u0430\u043A\u043E \u045C\u0435
+      \u0433\u043E \u043D\u0430\u043F\u0440\u0430\u0432\u0438\u043C\u0435 \u0442\u043E\u0430?"
     option1Index: 3
-    option2Text: Uh, are you sure...
+    option2Text: "\u0415\u0434\u0432\u0430\u0458 \u0447\u0435\u043A\u0430\u043C.
+      \u0410\u0458\u0434\u0435 \u0434\u0430 \u043F\u043E\u0447\u043D\u0435\u043C\u0435!"
     option2Index: 3
     final: 0
-  - story: Right now, you're nobody, so lets try to get to 100 followers for a start.
-    option1Text: Lets go!
-    option1Index: 5
-    option2Text: Any tips?
-    option2Index: 4
-    final: 0
-  - story: The more controversial, the better! Don't worry so much about posting
-      the truth if you know you an get a reaction
-    option1Text: Awesome, I'm ready!
-    option1Index: 5
+  - story: "\u0417\u0430 \u043F\u043E\u0447\u0435\u0442\u043E\u043A \u0430\u0458\u0434\u0435
+      \u0434\u0430 \u043A\u0440\u0435\u0438\u0440\u0430\u043C\u0435 \u0435\u0434\u043D\u0430
+      \u043E\u0431\u0458\u0430\u0432\u0430!"
+    option1Text: "\u0412\u043E \u0440\u0435\u0434!"
+    option1Index: 4
     option2Text: 
     option2Index: 0
     final: 0
-  - story: Lets begin with the journey...
-    option1Text: 
+  - story: "\u0417\u0430 \u043F\u043E\u0447\u0435\u0442\u043E\u043A \u0430\u0458\u0434\u0435
+      \u0434\u0430 \u043A\u0440\u0435\u0438\u0440\u0430\u043C\u0435 \u0435\u0434\u043D\u0430
+      \u043E\u0431\u0458\u0430\u0432\u0430!"
+    option1Text: "\u0412\u043E \u0440\u0435\u0434!"
     option1Index: 0
     option2Text: 
     option2Index: 0
@@ -7988,7 +7994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155.3, y: 25.1}
+  m_AnchoredPosition: {x: 155.3, y: 0}
   m_SizeDelta: {x: 274, y: 81.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396463461
@@ -8012,9 +8018,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85cdbc57a30c92948a5fb5f3eeaa6326, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 60
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 6
     m_MaxSize: 60
@@ -8024,7 +8030,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '@Me'
+  m_Text: "@\u0408\u0430\u0441"
 --- !u!222 &1396463462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8450,8 +8456,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 133, y: -91.32999}
-  m_SizeDelta: {x: 337.6044, y: 107.0943}
+  m_AnchoredPosition: {x: 133.00005, y: -87}
+  m_SizeDelta: {x: 1100.581, y: 107.094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1501885150
 CanvasRenderer:
@@ -8482,7 +8488,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85cdbc57a30c92948a5fb5f3eeaa6326, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -8494,7 +8500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Part 1
+  m_Text: "LEVEL 1: \u0418\u043C\u043F\u0435\u0440\u0441\u043E\u043D\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0458\u0430"
 --- !u!1 &1512248089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9204,10 +9210,6 @@ MonoBehaviour:
   tweetObjs:
   - {fileID: 11400000, guid: 93971e52f873dc74380f263ec50942cf, type: 2}
   - {fileID: 11400000, guid: 3c822a34b4275e145a5908d067601202, type: 2}
-  - {fileID: 11400000, guid: fb43c294df587a64fb12ee1cdbaffc4a, type: 2}
-  - {fileID: 11400000, guid: 3702c1de672ff844aa984f381a3e047c, type: 2}
-  - {fileID: 11400000, guid: 3a3fdd6286ccdef47964095ad3cb3941, type: 2}
-  - {fileID: 11400000, guid: d7645a2b248e7bb488c907f033f0d3b6, type: 2}
   tweetPrefab: {fileID: 8015688204479417837, guid: b479e3f0885d32f40b0066d7cec878a2, type: 3}
   button1: {fileID: 1440133414}
   button2: {fileID: 339568059}
@@ -9882,9 +9884,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d62e1f37ed270c048b4da217b827510d, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
