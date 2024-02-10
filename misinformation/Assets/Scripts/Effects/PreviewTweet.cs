@@ -23,21 +23,23 @@ public class PreviewTweet : MonoBehaviour
     {
         RectTransform rect = tweet.GetComponent<RectTransform>();
         Vector3 scale = rect.localScale;
+        RectTransform glow = Instantiate(instance.glowPrefab, instance.glowPrefab.transform.position, instance.glowPrefab.transform.rotation)
+                            .GetComponent<RectTransform>();
+        glow.transform.SetParent(instance.transform.parent, false);
+        glow.localScale = new Vector2(0.75f, 0.75f);
 
         Sequence s = DOTween.Sequence();
-
-        RectTransform glow = Instantiate(instance.glowPrefab).GetComponent<RectTransform>();
 
         glow.position = center;
         glow.transform.parent = instance.transform;
 
-        s.Append(rect.DOPunchScale(Vector3.Scale(new Vector3(-0.15f, -0.15f, 0), scale), 0.5f, 6, 2f).SetEase(Ease.InOutExpo));
-        s.Join(glow.DOScale(Vector3.Scale(new Vector3(2, 2, 1), glow.localScale), 1f).SetEase(Ease.OutExpo));
-        s.Join(glow.GetComponent<Image>().DOFade(0, 0.7f).SetEase(Ease.OutExpo));
+        s.Append(rect.DOPunchScale(Vector3.Scale(new Vector3(-0.1f, -0.1f, 0), scale), 0.5f, 7, 3f).SetEase(Ease.InOutExpo));
+        s.Join(glow.DOScale(Vector3.Scale(new Vector3(1.5f, 1.5f, 1), glow.localScale), 1f).SetEase(Ease.OutExpo));
+        s.Join(glow.GetComponent<Image>().DOFade(0, 1f).SetEase(Ease.OutExpo));
 
-        s.Append(rect.DOScale(scale, 0));
+        //s.Append(rect.DOScale(scale, 0));
 
-        Destroy(glow.gameObject, 3f);
+        Destroy(glow.gameObject, 1.5f);
 
         instance.StartCoroutine(instance.WaitForSidebar(tweet, 2f, onFinish));
     }

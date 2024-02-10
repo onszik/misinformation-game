@@ -106,7 +106,7 @@ public class tweets : MonoBehaviour, GameplayObject
         //currentIndex++;
 
         GameObject newtweet = Instantiate(tweetPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
-        newtweet.transform.parent = transform;
+        newtweet.transform.SetParent(transform, true);
         newtweet.GetComponent<TweetInfo>().SetObject(currentTweet);
 
         button1.GetComponent<Button>().interactable = true;
