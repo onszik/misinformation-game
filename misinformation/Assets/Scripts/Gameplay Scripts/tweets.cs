@@ -6,7 +6,9 @@ using DG.Tweening;
 
 public class tweets : MonoBehaviour, GameplayObject
 {
-    public tweetObj[] tweetObjs;
+    private tweetObj[] tweetObjs;
+    public TweetGroup[] tweetGroups;
+    private int currentGroup = 0;
 
     public GameObject tweetPrefab;
     private tweetObj currentTweet;
@@ -20,16 +22,24 @@ public class tweets : MonoBehaviour, GameplayObject
     private camera cameraScript;
 
     public Sidebar sidebar;
+
+    private static tweets instance;
     private void Start()
     {
+        instance = this;
+
         cameraScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<camera>();
         sidebar = GameObject.Find("Sidebar").GetComponent<Sidebar>();
     }
+
+
+
     public void StartGameplay()
     {
         button1.SetActive(true);
         button2.SetActive(true);
 
+        tweetObjs = tweetGroups[currentGroup].tweets;
         currentTweet = tweetObjs[currentIndex];
 
         Destroy(GameObject.FindGameObjectWithTag("tweet1"));
@@ -37,39 +47,15 @@ public class tweets : MonoBehaviour, GameplayObject
         tweetPrefab.SetActive(true);
 
         NewTweet();
+
+        currentGroup++;
     }
-    
-    /*
-    void Update()
+
+    public static void NextTweet()
     {
-        if (GameObject.FindGameObjectsWithTag("delete").Length <= 0 && (Input.GetMouseButtonDown(0)))
-        {
-            button1.SetActive(true);
-            button2.SetActive(true);
+        instance.NextButton();
+    }
 
-            currentIndex++;
-            if (currentIndex >= tweetObjs.Length)
-                currentIndex = 0;
-            currentTweet = tweetObjs[currentIndex];
-
-            Destroy(GameObject.FindGameObjectWithTag("tweet1"));
-            NewTweet();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            tweetObj twt = GameObject.FindGameObjectWithTag("tweet1").GetComponent<TweetInfo>().obj;
-
-            scorescript.scoreValue += twt.value * 2;
-            scorescript1.scoreValue1 += twt.value;
-            scorescript2.scoreValue2 += twt.value;
-            //Timer.currentTime += 5;
-            cameraScript.Camerating1();
-            cameraScript.Sound();
-
-            sidebar.AddTweet(GameObject.FindGameObjectWithTag("tweet1"));
-            NewTweet();
-        }
-    }*/
     public void NextButton()
     {
         button1.SetActive(true);
@@ -84,25 +70,21 @@ public class tweets : MonoBehaviour, GameplayObject
         NewTweet();
     }
 
-
     public void PostButton()
     {
-        tweetObj twt = GameObject.FindGameObjectWithTag("tweet1").GetComponent<TweetInfo>().obj;
+        button1.GetComponent<Button>().interactable = false;
+        button2.GetComponent<Button>().interactable = false;
 
-        scorescript.AddScore(twt.value * 2);
-        scorescript1.AddScore(twt.value);
-
-        cameraScript.Camerating1();
-        
         GameObject sidebarTweet = GameObject.FindGameObjectWithTag("tweet1");
-
         sidebarTweet.GetComponent<TweetInfo>().UpdateInfo();
 
         PreviewTweet.Preview(sidebarTweet, spawnPoint.position, NextButton);
 
-        button1.GetComponent<Button>().interactable = false;
-        button2.GetComponent<Button>().interactable = false;
-        Debug.Log("hi world");
+        tweetObj twt = sidebarTweet.GetComponent<TweetInfo>().obj;
+
+        scorescript.AddScore(twt.value);
+
+        cameraScript.Camerating1();
     }
 
     public void tweetty()

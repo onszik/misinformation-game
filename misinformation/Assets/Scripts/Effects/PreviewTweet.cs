@@ -31,7 +31,7 @@ public class PreviewTweet : MonoBehaviour
         glow.position = center;
         glow.transform.parent = instance.transform;
 
-        s.Append(rect.DOPunchScale(Vector3.Scale(new Vector3(0.15f, 0.15f, 0), scale), 1f, 6, 0f).SetEase(Ease.InOutExpo));
+        s.Append(rect.DOPunchScale(Vector3.Scale(new Vector3(-0.15f, -0.15f, 0), scale), 0.5f, 6, 2f).SetEase(Ease.InOutExpo));
         s.Join(glow.DOScale(Vector3.Scale(new Vector3(2, 2, 1), glow.localScale), 1f).SetEase(Ease.OutExpo));
         s.Join(glow.GetComponent<Image>().DOFade(0, 0.7f).SetEase(Ease.OutExpo));
 

@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class Sidebar : MonoBehaviour
 {
-    public Transform[] tweets;
+    public Transform[] sidebarTweets;
 
     private List<Image> coloredObjs = new List<Image>();
 
@@ -14,14 +14,14 @@ public class Sidebar : MonoBehaviour
         ScenesTransitions.BeforeSceneUnload += OnSceneUnloaded; // strav mi e da go ostavam vaka bez unsubscribe ama taka e na unity
         ScenesTransitions.OnSceneLoad += OnSceneLoaded; // strav mi e da go ostavam vaka bez unsubscribe ama taka e na unity
 
-        tweets = new Transform[6];
+        sidebarTweets = new Transform[6];
 
         int i = 0;
         foreach (Transform t in gameObject.GetComponentsInChildren<Transform>())
         {
             if (t.tag == "tweet2")
             {
-                tweets[i] = t;
+                sidebarTweets[i] = t;
                 i++;
             }
         }
@@ -43,20 +43,22 @@ public class Sidebar : MonoBehaviour
 
         twt_transform.DOLocalMoveY(twt_transform.localPosition.y - 240, 1f);
 
-        foreach (Transform t in tweets)
+        foreach (Transform t in sidebarTweets)
         {
             t.DOLocalMoveY(t.localPosition.y - 193, 1f);
         }
 
-        if (tweets[5] != null)
-            Destroy(tweets[5].gameObject);
+        if (sidebarTweets[5] != null)
+            Destroy(sidebarTweets[5].gameObject);
 
         for (int i = 5; i >= 1; i--)
         {
-            tweets[i] = tweets[i - 1];
+            sidebarTweets[i] = sidebarTweets[i - 1];
         }
 
-        tweets[0] = twt_transform;
+        sidebarTweets[0] = twt_transform;
+
+        tweets.NextTweet();
     }
 
     void OnSceneUnloaded()
