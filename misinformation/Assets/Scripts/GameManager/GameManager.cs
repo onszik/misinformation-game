@@ -61,10 +61,10 @@ public class GameManager : MonoBehaviour
     {
         if (currentBlock.final != true)
             return;
-        
-        
-        Destroy(gameObject);
+
         gameplayObj.GetComponent<GameplayObject>().StartGameplay();
+
+        gameObject.SetActive(false);
     }
     public void Button1Clicked()
     {
