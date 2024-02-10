@@ -24,6 +24,7 @@ public class tweets : MonoBehaviour, GameplayObject
     public Sidebar sidebar;
 
     private static tweets instance;
+
     private void Start()
     {
         instance = this;
@@ -32,7 +33,12 @@ public class tweets : MonoBehaviour, GameplayObject
         sidebar = GameObject.Find("Sidebar").GetComponent<Sidebar>();
     }
 
+    public static void NextPart()
+    {
+        instance.currentGroup++;
 
+        instance.StartGameplay();
+    }
 
     public void StartGameplay()
     {
@@ -47,8 +53,6 @@ public class tweets : MonoBehaviour, GameplayObject
         tweetPrefab.SetActive(true);
 
         NewTweet();
-
-        currentGroup++;
     }
 
     public static void NextTweet()
