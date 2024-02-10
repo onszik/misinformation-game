@@ -38,38 +38,6 @@ public class tweets : MonoBehaviour, GameplayObject
 
         NewTweet();
     }
-    
-    /*
-    void Update()
-    {
-        if (GameObject.FindGameObjectsWithTag("delete").Length <= 0 && (Input.GetMouseButtonDown(0)))
-        {
-            button1.SetActive(true);
-            button2.SetActive(true);
-
-            currentIndex++;
-            if (currentIndex >= tweetObjs.Length)
-                currentIndex = 0;
-            currentTweet = tweetObjs[currentIndex];
-
-            Destroy(GameObject.FindGameObjectWithTag("tweet1"));
-            NewTweet();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            tweetObj twt = GameObject.FindGameObjectWithTag("tweet1").GetComponent<TweetInfo>().obj;
-
-            scorescript.scoreValue += twt.value * 2;
-            scorescript1.scoreValue1 += twt.value;
-            scorescript2.scoreValue2 += twt.value;
-            //Timer.currentTime += 5;
-            cameraScript.Camerating1();
-            cameraScript.Sound();
-
-            sidebar.AddTweet(GameObject.FindGameObjectWithTag("tweet1"));
-            NewTweet();
-        }
-    }*/
     public void NextButton()
     {
         button1.SetActive(true);
@@ -120,7 +88,7 @@ public class tweets : MonoBehaviour, GameplayObject
         //currentIndex++;
 
         GameObject newtweet = Instantiate(tweetPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
-        newtweet.transform.parent = transform;
+        newtweet.transform.SetParent(transform, true);
         newtweet.GetComponent<TweetInfo>().SetObject(currentTweet);
 
         button1.GetComponent<Button>().interactable = true;
