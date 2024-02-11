@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57166158692623144a409f000d9a91f6, type: 3}
-  m_Name: Weather
+  m_Script: {fileID: 11500000, guid: af20007ff4dfedb4999db334fd64d3d5, type: 3}
+  m_Name: 2
   m_EditorClassIdentifier: 
-  username: '@Me'
-  content: The weather looks nice today
-  likes: 0
-  shares: 0
-  value: -10
+  tweets:
+  - {fileID: 11400000, guid: cb6fab3ad4338d64c845bbccc5b72a4a, type: 2}
+  - {fileID: 11400000, guid: 3a3fdd6286ccdef47964095ad3cb3941, type: 2}
