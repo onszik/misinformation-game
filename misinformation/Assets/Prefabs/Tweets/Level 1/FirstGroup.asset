@@ -15,7 +15,3 @@ MonoBehaviour:
   tweets:
   - {fileID: 11400000, guid: 93971e52f873dc74380f263ec50942cf, type: 2}
   - {fileID: 11400000, guid: 3c822a34b4275e145a5908d067601202, type: 2}
-  - {fileID: 11400000, guid: cb6fab3ad4338d64c845bbccc5b72a4a, type: 2}
-  - {fileID: 11400000, guid: 3a3fdd6286ccdef47964095ad3cb3941, type: 2}
-  - {fileID: 11400000, guid: fb43c294df587a64fb12ee1cdbaffc4a, type: 2}
-  - {fileID: 11400000, guid: 3702c1de672ff844aa984f381a3e047c, type: 2}

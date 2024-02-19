@@ -24,6 +24,7 @@ public class tweets : MonoBehaviour, GameplayObject
     public Sidebar sidebar;
 
     private static tweets instance;
+    public GameManager dialogue;
 
     private void Start()
     {
@@ -33,19 +34,13 @@ public class tweets : MonoBehaviour, GameplayObject
         sidebar = GameObject.Find("Sidebar").GetComponent<Sidebar>();
     }
 
-    public static void NextPart()
-    {
-        instance.currentGroup++;
-
-        instance.StartGameplay();
-    }
-
     public void StartGameplay()
     {
         button1.SetActive(true);
         button2.SetActive(true);
 
-        tweetObjs = tweetGroups[currentGroup].tweets;
+        instance.currentGroup++;
+        tweetObjs = tweetGroups[currentGroup - 1].tweets;
         currentTweet = tweetObjs[currentIndex];
 
         Destroy(GameObject.FindGameObjectWithTag("tweet1"));
@@ -55,6 +50,14 @@ public class tweets : MonoBehaviour, GameplayObject
         NewTweet();
     }
 
+    public void Disable()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("tweet1"));
+
+        button1.SetActive(false);
+        button2.SetActive(false);
+    }
+
     public static void NextTweet()
     {
         instance.NextButton();
@@ -62,9 +65,6 @@ public class tweets : MonoBehaviour, GameplayObject
 
     public void NextButton()
     {
-        button1.SetActive(true);
-        button2.SetActive(true);
-
         currentIndex++;
         if (currentIndex >= tweetObjs.Length)
             currentIndex = 0;
@@ -89,6 +89,14 @@ public class tweets : MonoBehaviour, GameplayObject
         scorescript.AddScore(twt.value);
 
         cameraScript.Camerating1();
+
+        if (currentTweet.uniqueResponse == true)
+        {
+            dialogue.gameObject.SetActive(true);
+            dialogue.DisplayBlock(currentTweet.response);
+
+            Disable();
+        }
     }
 
     public void tweetty()
