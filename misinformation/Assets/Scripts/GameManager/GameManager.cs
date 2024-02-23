@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         DisplayBlock(blocks[0]);
     }
 
-    void DisplayBlock(StoryBlock block)
+    public void DisplayBlock(StoryBlock block)
     {
         mainText.text = block.story;
 
@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
             return;
 
         gameplayObj.GetComponent<GameplayObject>().StartGameplay();
-
         gameObject.SetActive(false);
     }
     public void Button1Clicked()
@@ -78,5 +77,4 @@ public class GameManager : MonoBehaviour
 
         CheckBlock();
     }
-    
 }

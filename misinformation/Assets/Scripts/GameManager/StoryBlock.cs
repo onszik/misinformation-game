@@ -4,6 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class StoryBlock {
+
     public string story;
 
     public string option1Text;
