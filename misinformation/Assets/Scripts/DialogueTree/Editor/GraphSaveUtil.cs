@@ -6,14 +6,14 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using System;
 using System.Linq;
-
+/*
 public class GraphSaveUtil : MonoBehaviour
 {
     private DialogueGraphView _targetGraphView;
     private DialogueContainer _containerCache;
 
     private List<Edge> edges => _targetGraphView.edges.ToList();
-    private List<DialogueNode> nodes => _targetGraphView.nodes.ToList().Cast<DialogueNode>().ToList();
+    private List<GenericNode> nodes => _targetGraphView.nodes.ToList().Cast<GenericNode>().ToList();
 
     public static GraphSaveUtil GetInstance(DialogueGraphView targetGraphView)
     {
@@ -34,8 +34,8 @@ public class GraphSaveUtil : MonoBehaviour
 
         for (int i = 0; i < connectedPorts.Length; i++)
         {
-            DialogueNode inputNode = connectedPorts[i].input.node as DialogueNode;
-            DialogueNode outputNode = connectedPorts[i].output.node as DialogueNode;
+            GenericNode inputNode = connectedPorts[i].input.node as GenericNode;
+            GenericNode outputNode = connectedPorts[i].output.node as GenericNode;
 
             dialogueContainer.nodeLinks.Add(new NodeLinkData
             {
@@ -45,7 +45,20 @@ public class GraphSaveUtil : MonoBehaviour
             });
         }
 
-        foreach (DialogueNode n in nodes.Where(node => !node.entryPoint))
+        List<DialogueNode> DialogueNodes = nodes.OfType<DialogueNode>().ToList();
+        List<TweetNode> TweetNodes = nodes.OfType<TweetNode>().ToList();
+
+        foreach (DialogueNode n in DialogueNodes.Where(node => !node.entryPoint))
+        {
+            dialogueContainer.dialogueNodeData.Add(new DialogueNodeData
+            {
+                nodeGUID = n.GUID,
+                dialogueText = n.dialogueText,
+                position = n.GetPosition().position
+            });
+        }
+
+        foreach (TweetNode n in TweetNodes)
         {
             dialogueContainer.dialogueNodeData.Add(new DialogueNodeData
             {
@@ -76,7 +89,7 @@ public class GraphSaveUtil : MonoBehaviour
     {
         nodes.Find(x => x.entryPoint).GUID = _containerCache.nodeLinks[0].baseNodeGUID;
 
-        foreach (DialogueNode n in nodes)
+        foreach (GenericNode n in nodes)
         {
             if (n.entryPoint) continue;
 
@@ -93,6 +106,7 @@ public class GraphSaveUtil : MonoBehaviour
         {
             var tempNode = _targetGraphView.CreateDialogueNode(nodeData.dialogueText);
             tempNode.GUID = nodeData.nodeGUID;
+            tempNode.SetPosition(new Rect(nodeData.position, _targetGraphView.defaultNodeSize));
             _targetGraphView.AddElement(tempNode);
 
             var nodePorts = _containerCache.nodeLinks.Where(x => x.baseNodeGUID == nodeData.nodeGUID).ToList();
@@ -134,3 +148,4 @@ public class GraphSaveUtil : MonoBehaviour
         _targetGraphView.Add(tempEdge);
     }
 }
+*/

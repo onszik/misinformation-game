@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a641979ad748ce41ad462a578f371fd, type: 3}
-  m_Name: Name
+  m_Name: test1
   m_EditorClassIdentifier: 
   nodeLinks:
-  - baseNodeGUID: 8567d4615156dfe49852120f93af285a
+  - baseNodeGUID: f6c0ec319d5a8bf4691395343e5763bd
+    portName: Choice 1
+    targetNodeGUID: 5c79e50f5465ead45b89de674af58095
+  - baseNodeGUID: 9fe4c63020f07314398a3c4bde63d310
     portName: Next
-    targetNodeGUID: 2cb8dc3ec4d758e4ca5e608e5071ea20
-  dialogueNodeData:
-  - nodeGUID: 2cb8dc3ec4d758e4ca5e608e5071ea20
-    dialogueText: New Node
-    position: {x: 304, y: 101}
+    targetNodeGUID: f6c0ec319d5a8bf4691395343e5763bd

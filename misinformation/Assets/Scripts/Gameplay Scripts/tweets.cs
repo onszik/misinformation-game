@@ -70,7 +70,7 @@ public class tweets : MonoBehaviour, GameplayObject
             currentIndex = 0;
         currentTweet = tweetObjs[currentIndex];
 
-        Destroy(GameObject.FindGameObjectWithTag("tweet1"));
+        //Destroy(GameObject.FindGameObjectWithTag("tweet1"));
         NewTweet();
     }
 

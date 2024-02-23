@@ -2,7 +2,6 @@ DialogueNode #title {
 	background-color: rgb(20, 20, 20);
 }
 
-
-Port TextField {
-	translate: 0%, 0;
+TweetNode #title {
+	background-color: rgb(24, 28, 43);
 }

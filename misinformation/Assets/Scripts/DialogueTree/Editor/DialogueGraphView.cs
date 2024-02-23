@@ -20,10 +20,10 @@ public class DialogueGraphView : GraphView
         AddElement(GenerateEntryPointNode());
     }
 
-    private Port GeneratePort(DialogueNode node, Direction portDir, Port.Capacity capacity = Port.Capacity.Single)
+    private Port GeneratePort(Node node, Direction portDir, Port.Capacity capacity = Port.Capacity.Single)
     {
         return node.InstantiatePort(Orientation.Horizontal, portDir, capacity, typeof(float)); // random type
-    } 
+    }
 
     private DialogueNode GenerateEntryPointNode()
     {
@@ -49,9 +49,52 @@ public class DialogueGraphView : GraphView
         return node;
     }
 
-    public void CreateNode(string name)
+    public void CreateNode(string type, string name)
     {
-        AddElement(CreateDialogueNode(name));
+        //AddElement(CreateDialogueNode(name));
+        AddElement(CreateNodeOfType(type, name));
+    }
+    public void CreateTweet(string name)
+    {
+        AddElement(CreateTweetNode(name));
+    }
+
+    public Node CreateNodeOfType(string type, string name)
+    {
+        Node newNode = new Node();
+
+        switch (type) {
+            case "Dialogue":
+                newNode = CreateDialogueNode(name);
+                break;
+            case "Tweet":
+                newNode = CreateTweetNode(name);
+                break;
+            /*
+            case "Exec":
+            case "Executive":
+                newNode = CreateExecNode(name);
+                break;
+            */
+            default:
+                Debug.LogError("Invalid node type, defaulting to Dialogue Node");
+                newNode = CreateDialogueNode(name);
+                break;
+        }
+
+        newNode.Add(new ResizableElement());
+
+        var inputPort = GeneratePort(newNode, Direction.Input, Port.Capacity.Multi);
+        inputPort.portName = "Input";
+        newNode.inputContainer.Add(inputPort);
+
+        newNode.styleSheets.Add(Resources.Load<StyleSheet>("Node"));
+
+        newNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
+        newNode.RefreshExpandedState();
+        newNode.RefreshPorts();
+
+        return newNode;
     }
 
     public DialogueNode CreateDialogueNode(string name)
@@ -63,14 +106,6 @@ public class DialogueGraphView : GraphView
             GUID = GUID.Generate().ToString(),
         };
 
-        dialogueNode.Add(new ResizableElement());
-
-        var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
-        inputPort.portName = "Input";
-        dialogueNode.inputContainer.Add(inputPort);
-
-        dialogueNode.styleSheets.Add(Resources.Load<StyleSheet>("Node"));
-
         Button button = new Button(clickEvent: () => { 
             AddChoicePort(dialogueNode); 
         });
@@ -78,6 +113,9 @@ public class DialogueGraphView : GraphView
         button.text = "+";
 
         var textField = new TextField(string.Empty) {
+            name = "Content Field",
+            value = "Dialogue",
+            multiline = true,
             style = {
                 flexWrap = Wrap.Wrap,
                 flexDirection = FlexDirection.Row,
@@ -87,23 +125,101 @@ public class DialogueGraphView : GraphView
             }
         };
 
-        textField.multiline = true;
         textField.RegisterValueChangedCallback(evt =>
         {
             dialogueNode.dialogueText = evt.newValue;
         });
-        textField.SetValueWithoutNotify(dialogueNode.title);
         dialogueNode.mainContainer.Add(textField);
-        
-
-        dialogueNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
-        dialogueNode.RefreshExpandedState();
-        dialogueNode.RefreshPorts();
 
         return dialogueNode;
     }
+    public TweetNode CreateTweetNode(string name)
+    {
+        TweetNode tweetNode = new TweetNode
+        {
+            title = name,
+            GUID = GUID.Generate().ToString(),
+        };
 
-    public void AddChoicePort(DialogueNode dialogueNode, string overriddenPortName = "")
+        var nameField = new TextField(string.Empty)
+        {
+            name = "Username",
+            value = "@NewUser",
+            multiline = false,
+            style = {
+                flexWrap = Wrap.Wrap,
+                flexDirection = FlexDirection.Row,
+                maxWidth = 250,
+                minWidth = 50,
+                whiteSpace = WhiteSpace.Normal
+            }
+        };
+
+        nameField.RegisterValueChangedCallback(evt =>
+        {
+            tweetNode.username = evt.newValue;
+        });
+        tweetNode.mainContainer.Add(nameField);
+
+        var textField = new TextField(string.Empty)
+        {
+            name = "Content Field",
+            value = "Tweet Body",
+            multiline = true,
+            style = {
+                flexWrap = Wrap.Wrap,
+                flexDirection = FlexDirection.Row,
+                maxWidth = 250,
+                minWidth = 50,
+                whiteSpace = WhiteSpace.Normal
+            }
+        };
+
+        textField.RegisterValueChangedCallback(evt =>
+        {
+            tweetNode.dialogueText = evt.newValue;
+        });
+        tweetNode.mainContainer.Add(textField);
+
+        var valueField = new IntegerField(string.Empty)
+        {
+            name = "Content Field",
+            value = 0,
+            style = {
+                flexWrap = Wrap.Wrap,
+                flexDirection = FlexDirection.Row,
+                maxWidth = 250,
+                minWidth = 50,
+                whiteSpace = WhiteSpace.Normal
+            }
+        };
+
+        valueField.RegisterValueChangedCallback(evt =>
+        {
+            tweetNode.value = evt.newValue;
+        });
+        tweetNode.mainContainer.Add(valueField);
+
+        AddBasicPort(tweetNode, "Next");
+        AddBasicPort(tweetNode, "Post");
+
+        return tweetNode;
+    }
+    public void AddBasicPort(Node dialogueNode, string portName = "")
+    {
+        var generatedPort = GeneratePort(dialogueNode, Direction.Output);
+
+        var oldLabel = generatedPort.contentContainer.Q<Label>("type");
+        oldLabel.text = portName;
+
+        generatedPort.portName = portName;
+
+        dialogueNode.outputContainer.Add(generatedPort);
+        dialogueNode.RefreshExpandedState();
+        dialogueNode.RefreshPorts();
+    }
+
+    public void AddChoicePort(Node dialogueNode, string overriddenPortName = "")
     {
         var generatedPort = GeneratePort(dialogueNode, Direction.Output);
 
@@ -114,45 +230,32 @@ public class DialogueGraphView : GraphView
             ? $"Choice {outputPortCount + 1}"
             : overriddenPortName;
 
-        var textFieldContainer = new VisualElement {
-            style = {
-                flexDirection = FlexDirection.Row,
-                justifyContent = Justify.FlexEnd,
-                alignItems = Align.FlexStart,
-                overflow = Overflow.Visible,
-                //backgroundColor = new StyleColor(new Color(245f / 255, 66f / 255, 224f / 255)) // za debug
-            }
-        };
-
         var deleteButton = new Button(() => RemovePort(dialogueNode, generatedPort))
         {
             text = "x"
         };
-        textFieldContainer.Add(deleteButton);
+        generatedPort.contentContainer.Add(deleteButton);
 
         var textField = new TextField {
-            name = string.Empty,
+            name = "Choice Field",
             value = choicePortName,
+            multiline = true,
             style = {
-                flexWrap = Wrap.Wrap,
-                flexDirection = FlexDirection.Row,
                 maxWidth = 200,
                 minWidth = 50,
-                whiteSpace = WhiteSpace.Normal
+                whiteSpace = WhiteSpace.Normal,
+                overflow = Overflow.Visible,
+                flexWrap = Wrap.Wrap,
+                flexGrow = 1
             }
         };
         textField.RegisterValueChangedCallback(evt => generatedPort.portName = evt.newValue);
-        textField.style.whiteSpace = WhiteSpace.Normal;
-        textFieldContainer.Add(textField);
-
+        generatedPort.contentContainer.Add(textField);
 
         var oldLabel = generatedPort.contentContainer.Q<Label>("type");
         generatedPort.contentContainer.Remove(oldLabel);
 
-        generatedPort.contentContainer.Add(textFieldContainer);
-
         generatedPort.portName = choicePortName;
-
 
         dialogueNode.outputContainer.Add(generatedPort);
         dialogueNode.RefreshExpandedState();
@@ -174,7 +277,7 @@ public class DialogueGraphView : GraphView
         return compariblePorts;
     }
 
-    private void RemovePort(DialogueNode dialogueNode, Port generatedPort)
+    private void RemovePort(Node dialogueNode, Port generatedPort)
     {
         var connectedEdges = edges.ToList().Where(edge =>
             edge.output == generatedPort || edge.input == generatedPort);

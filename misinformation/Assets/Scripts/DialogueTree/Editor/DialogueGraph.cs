@@ -71,14 +71,14 @@ public class DialogueGraph : EditorWindow
 
         Button dialogueNodeCreateButton = new Button(clickEvent: () =>
         {
-            _graphView.CreateNode("New Node");
+            _graphView.CreateNode("Dialogue", "New Node");
         });
         dialogueNodeCreateButton.text = "Create Dialogue";
         toolbar.Add(dialogueNodeCreateButton);
 
         Button gameplayNodeCreateButton = new Button(clickEvent: () =>
         {
-            _graphView.CreateNode("New Node");
+            _graphView.CreateTweet("New Tweet");
         });
         gameplayNodeCreateButton.text = "Create Tweet";
         toolbar.Add(gameplayNodeCreateButton);
@@ -94,7 +94,7 @@ public class DialogueGraph : EditorWindow
             return;
         }
 
-        GraphSaveUtil saveUtil = GraphSaveUtil.GetInstance(_graphView);
+        SaveLoad saveUtil = SaveLoad.GetInstance(_graphView);
         if (save) {
             saveUtil.SaveGraph(_fileName);
         } else {
