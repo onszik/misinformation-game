@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
-
+/*
 public class final : MonoBehaviour, GameplayObject
 {
     public GameObject tweetPrefab;
@@ -81,3 +81,4 @@ public class final : MonoBehaviour, GameplayObject
         postButton.GetComponent<Button>().interactable = true;
     }
 }
+*/

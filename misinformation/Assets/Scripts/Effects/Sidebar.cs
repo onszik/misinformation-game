@@ -57,8 +57,6 @@ public class Sidebar : MonoBehaviour
         }
 
         sidebarTweets[0] = twt_transform;
-
-        tweets.NextTweet();
     }
 
     void OnSceneUnloaded()

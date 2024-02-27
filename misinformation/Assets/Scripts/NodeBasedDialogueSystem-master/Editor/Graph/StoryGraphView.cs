@@ -63,7 +63,7 @@ namespace Subtegral.DialogueSystem.Editor
             var group = new Group
             {
                 autoUpdateGeometry = true,
-                title = commentBlockData.Title
+                title = commentBlockData.Title,
             };
             AddElement(group);
             group.SetPosition(rect);
@@ -233,15 +233,15 @@ namespace Subtegral.DialogueSystem.Editor
 
             var valueField = new IntegerField(string.Empty)
             {
-                name = "Content Field",
+                name = "Value",
                 value = 0,
                 style = {
-                flexWrap = Wrap.Wrap,
-                flexDirection = FlexDirection.Row,
-                maxWidth = 250,
-                minWidth = 50,
-                whiteSpace = WhiteSpace.Normal
-            }
+                    flexWrap = Wrap.Wrap,
+                    flexDirection = FlexDirection.Row,
+                    maxWidth = 250,
+                    minWidth = 50,
+                    whiteSpace = WhiteSpace.Normal
+                }
             };
 
             valueField.RegisterValueChangedCallback(evt =>

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
-  m_Name: level1
+  m_Name: level1_backup
   m_EditorClassIdentifier: 
   NodeLinks:
   - BaseNodeGUID: e28bcdbb-3efd-478a-8d78-696d412e5ea3
@@ -107,6 +107,12 @@ MonoBehaviour:
   - BaseNodeGUID: cfae1c23-b070-407f-a477-1673302efb7a
     PortName: Option 4
     TargetNodeGUID: 524f79c4d55a95c4cb699a2b739206fa
+  - BaseNodeGUID: 3c5f7efd-7a1e-4919-ac68-397c6ab001de
+    PortName: Option 2
+    TargetNodeGUID: 5780a2afc34ba6b41920d04147ae2e37
+  - BaseNodeGUID: 3c5f7efd-7a1e-4919-ac68-397c6ab001de
+    PortName: Option 4
+    TargetNodeGUID: a7cf03ca4a40f354a8f0efc4a13efa3e
   - BaseNodeGUID: ab7cc34e-a432-4321-b97a-b60856e0d7e7
     PortName: "\u0425\u0430\u0445\u0430, \u0438\u0437\u0433\u043B\u0435\u0434\u0430
       \u0441\u0435 \u0437\u0430\u043D\u0435\u0441\u043E\u0432 \u043C\u0430\u043B\u043A\u0443"
@@ -123,12 +129,6 @@ MonoBehaviour:
   - BaseNodeGUID: 905f8845-bff5-4639-89cd-49563bde5c96
     PortName: Option 6
     TargetNodeGUID: cf86d1b05a6efbf488ba4602195740b2
-  - BaseNodeGUID: 905f8845-bff5-4639-89cd-49563bde5c96
-    PortName: Option 999
-    TargetNodeGUID: e4817efd3591698408454462b87d90ab
-  - BaseNodeGUID: 905f8845-bff5-4639-89cd-49563bde5c96
-    PortName: Next
-    TargetNodeGUID: 544be8b1-44ef-42e8-91a8-1a0671b3ef8c
   - BaseNodeGUID: 544be8b1-44ef-42e8-91a8-1a0671b3ef8c
     PortName: 5
     TargetNodeGUID: 300c96fc-ba2a-435d-9853-021eeac1b617
@@ -158,17 +158,17 @@ MonoBehaviour:
     PortName: "\u0410\u0458\u043C\u043E\u043E\u043E\u043E!"
     TargetNodeGUID: 1dcfb3f0-d5de-4069-9f43-5c5653e61a46
   - BaseNodeGUID: 3c5f7efd-7a1e-4919-ac68-397c6ab001de
-    PortName: Option 2
-    TargetNodeGUID: 5780a2afc34ba6b41920d04147ae2e37
-  - BaseNodeGUID: 3c5f7efd-7a1e-4919-ac68-397c6ab001de
-    PortName: Option 4
-    TargetNodeGUID: a7cf03ca4a40f354a8f0efc4a13efa3e
-  - BaseNodeGUID: 3c5f7efd-7a1e-4919-ac68-397c6ab001de
     PortName: Option 5
     TargetNodeGUID: 605dab88372be6242bc1cd1884377e0a
   - BaseNodeGUID: 3c5f7efd-7a1e-4919-ac68-397c6ab001de
     PortName: Next
     TargetNodeGUID: ab7cc34e-a432-4321-b97a-b60856e0d7e7
+  - BaseNodeGUID: 905f8845-bff5-4639-89cd-49563bde5c96
+    PortName: Option 999
+    TargetNodeGUID: e4817efd3591698408454462b87d90ab
+  - BaseNodeGUID: 905f8845-bff5-4639-89cd-49563bde5c96
+    PortName: Next
+    TargetNodeGUID: 544be8b1-44ef-42e8-91a8-1a0671b3ef8c
   DialogueNodeData:
   - NodeGUID: c7159cdd-3eb8-4c4d-ba87-22de38292bb9
     DialogueText: "\u0417\u0434\u0440\u0430\u0432\u043E. \u0414\u043E\u0431\u0440\u0435\u0434\u043E\u0458\u0434\u0435

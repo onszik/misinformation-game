@@ -52,11 +52,6 @@ public class scorescript : MonoBehaviour {
         {
             ScenesTransitions.NextScene();
         }
-        if (scoreValue >= 20)
-        {
-            Destroy(GameObject.FindGameObjectWithTag("tweet1"));
-
-        }
 
 
         if (scoreValue <= lose)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,8 @@ public class chaosMeter : MonoBehaviour {
 
     public int chaosScore = 0;
     public int maxChaos = 100;
+
+    public float animSpeed = 0.2f;
 
     private static chaosMeter instance;
 
@@ -32,15 +35,16 @@ public class chaosMeter : MonoBehaviour {
             instance.chaosScore -= x;
         }
 
-        instance.UpdateMeter();
+        instance.UpdateMeter(instance.animSpeed);
     }
 
-    private void UpdateMeter()
+    private void UpdateMeter(float time = 0)
     {
+
         float width = ((float)chaosScore / maxChaos) * fullWidth;
 
-        rTransform.sizeDelta = new Vector2(width, rTransform.rect.height);
-        print(width);
+        rTransform.DOSizeDelta(new Vector2(width, rTransform.rect.height), time).SetEase(Ease.InOutElastic);
+        ;
     }
 }
 

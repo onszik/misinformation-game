@@ -21,6 +21,8 @@ public class PreviewTweet : MonoBehaviour
 
     public static void Preview(GameObject tweet, Vector3 center, Action onFinish)
     {
+        tweet.tag = "Untagged";
+
         RectTransform rect = tweet.GetComponent<RectTransform>();
         Vector3 scale = rect.localScale;
         RectTransform glow = Instantiate(instance.glowPrefab, instance.glowPrefab.transform.position, instance.glowPrefab.transform.rotation)
