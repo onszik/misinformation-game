@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-
+/*
 public class tweets : MonoBehaviour, GameplayObject
 {
     private tweetObj[] tweetObjs;
@@ -99,16 +99,6 @@ public class tweets : MonoBehaviour, GameplayObject
         }
     }
 
-    public void tweetty()
-    {
-        if (GameObject.FindGameObjectsWithTag("delete").Length <= 0 && !isDone)
-        {
-            NewTweet();
-
-            isDone = true;
-        }
-    }
-
     public void NewTweet()
     {
         //currentIndex++;
@@ -121,3 +111,4 @@ public class tweets : MonoBehaviour, GameplayObject
         button2.GetComponent<Button>().interactable = true;
     }
 }
+*/

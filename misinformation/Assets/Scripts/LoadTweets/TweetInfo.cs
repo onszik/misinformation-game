@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Subtegral.DialogueSystem.DataContainers;
 using TMPro;
 
 public class TweetInfo : MonoBehaviour
 {
-    public tweetObj obj;
+    public DialogueNodeData obj;
 
-    public void SetObject(tweetObj tweet)
+    public void SetObject(DialogueNodeData tweet)
     {
         obj = tweet;
 
@@ -17,15 +18,15 @@ public class TweetInfo : MonoBehaviour
 
     private void DisplayInfo()
     {
-        transform.Find("Top/Username").GetComponent<TMP_Text>().text = obj.username;
-        transform.Find("Middle/Content").GetComponent<TMP_Text>().text = obj.content;
+        transform.Find("Top/Username").GetComponent<TMP_Text>().text = obj.Username;
+        transform.Find("Middle/Content").GetComponent<TMP_Text>().text = obj.DialogueText;
     }
 
     public void UpdateInfo()
     {
-        transform.Find("Top/Username").GetComponent<TMP_Text>().text = obj.username;
-        transform.Find("Middle/Content").GetComponent<TMP_Text>().text = obj.content;
-        transform.Find("Bottom/Likes").GetComponent<TMP_Text>().text = "" + Random.Range(obj.value, obj.value * 2);
-        transform.Find("Bottom/Shares").GetComponent<TMP_Text>().text = "" + Mathf.Clamp(Random.Range(obj.value / 2, obj.value), 0, obj.value);
+        transform.Find("Top/Username").GetComponent<TMP_Text>().text = obj.Username;
+        transform.Find("Middle/Content").GetComponent<TMP_Text>().text = obj.DialogueText;
+        transform.Find("Bottom/Likes").GetComponent<TMP_Text>().text = "" + Random.Range(obj.Value, obj.Value * 2);
+        transform.Find("Bottom/Shares").GetComponent<TMP_Text>().text = "" + Mathf.Clamp(Random.Range(obj.Value / 2, obj.Value), 0, obj.Value);
     }
 }
