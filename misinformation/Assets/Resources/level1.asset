@@ -404,7 +404,7 @@ MonoBehaviour:
     Username: 
     Value: 0
   - NodeGUID: 1dcfb3f0-d5de-4069-9f43-5c5653e61a46
-    DialogueText: Kraj
+    DialogueText: '[Kraj]'
     Position: {x: 7861, y: -282}
     IsTweetNode: 0
     Username: 
