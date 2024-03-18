@@ -80,6 +80,7 @@ public class ScenesTransitions : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay);
 
+        //transition.gameObject.SetActive(true);
         transition.rectTransform.DOMoveY(startPos.y, 0f);
         transition.DOFade(1f, transitionSpeed);
 
